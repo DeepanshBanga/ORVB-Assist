@@ -22,9 +22,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
             const { success, error } = await signUp(email, password, fullname, phoneNumber, registerAs);
 
+            // After successful sign-up
             if (success) {
-                alert('Registration successful! Please check your email to verify your account.');
-                window.location.href = 'login.html';
+              alert('Registration successful! Check email to verify.');
+              // Optional: Listen for auth state change
+              supabase.auth.onAuthStateChange((event, session) => {
+                if (event === 'SIGNED_IN') window.location.href = 'dashboard.html';
+              });
             } else {
                 alert('Registration failed: ' + error);
             }
