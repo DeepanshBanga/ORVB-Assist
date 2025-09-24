@@ -1,0 +1,32 @@
+{
+  "name": "roadready-assist-hub",
+  "version": "1.0.0",
+  "description": "Roadside assistance web app with Supabase integration",
+  "main": "index.html",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "lint": "eslint . --ext js,html --report-unused-disable-directives --max-warnings 0"
+  },
+  "keywords": ["roadside-assistance", "supabase", "static-site", "vercel"],
+  "author": "Your Name <your-email@example.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "vite": "^5.4.8",
+    "eslint": "^9.9.1"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}
