@@ -1,0 +1,306 @@
+/* profile.css */
+
+/* Basic reset and general styles (you might want to consolidate these with your existing CSS) */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f4f4f4;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-primary {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+}
+
+/* Header (You might have these styles elsewhere, adjust as needed) */
+.header {
+    background-color: #e6f7ff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+}
+
+.header .logo a {
+    font-size: 1.5em;
+    color: #000;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.header .logo span {
+    color: #007bff;
+}
+
+.header .main-nav ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.header .main-nav ul li {
+    margin-right: 20px;
+}
+
+.header .main-nav ul li a {
+    text-decoration: none;
+    color: #333;
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: color 0.3s ease;
+}
+
+.header .main-nav ul li a:hover,
+.header .main-nav ul li a.active {
+    color: #007bff;
+}
+
+/* Profile Section */
+.profile-section {
+    padding: 40px 0;
+}
+
+.profile-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.profile-header h1 {
+    font-size: 2.5em;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.profile-details {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 30px;
+}
+
+.user-info {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+}
+
+.user-info h2 {
+    font-size: 1.5em;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.info-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.info-item:last-child {
+    border-bottom: none;
+}
+
+.info-item label {
+    font-weight: bold;
+    color: #555;
+}
+
+.info-item span {
+    color: #333;
+}
+
+.edit-profile {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    font-size: 1em;
+    margin-top: 20px;
+}
+
+/* Order History */
+.order-history {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+}
+
+.order-history h2 {
+    font-size: 1.5em;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.order-history table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.order-history th,
+.order-history td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.order-history th {
+    background-color: #f9f9f9;
+    font-weight: bold;
+}
+
+/* Modal Styles */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+    max-width: 500px;
+    border-radius: 8px;
+    position: relative;
+}
+
+.close {
+    color: #aaa;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 0.9em;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group textarea {
+    width: calc(100% - 12px);
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1em;
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+/* Footer (You might have these styles elsewhere, adjust as needed) */
+.footer {
+    background-color: #333;
+    color: #fff;
+    padding: 30px 0;
+}
+
+.footer .container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 30px;
+}
+
+.footer-logo h3 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.footer-logo p {
+    color: #ccc;
+}
+
+.footer-links h4,
+.footer-contact h4 {
+    border-bottom: 2px solid #555;
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+}
+
+.footer-links ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-links ul li {
+    margin-bottom: 10px;
+}
+
+.footer-links ul li a {
+    color: #ccc;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-links ul li a:hover {
+    color: #fff;
+}
+
+.footer-contact p {
+    color: #ccc;
+    margin-bottom: 10px;
+}
+
+.footer-contact i {
+    margin-right: 10px;
+}

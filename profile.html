@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Profile</title>
+    <link rel="stylesheet" href="profile.css">
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">
+                    <h3>ORVB<span>Assist</span></h3>
+                </a>
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="shop.html">Shop</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="profile.html" class="active">Profile</a></li>
+                </ul>
+            </nav>
+            <div class="auth-buttons">
+                <a href="login.html" class="btn btn-outline">Logout</a>
+                </div>
+        </div>
+    </header>
+
+    <section class="profile-section">
+        <div class="container">
+            <div class="profile-header">
+                <h1>Your Profile</h1>
+                <p>Manage your account details and order history.</p>
+            </div>
+
+            <div class="profile-details">
+                <div class="user-info">
+                    <h2>User Information</h2>
+                
+                    <div class="info-item">
+                        <label>Name:</label>
+                        <span id="user-name">John Doe</span>
+                    </div>
+                
+                    <div class="info-item">
+                        <label>Email:</label>
+                        <span id="user-email">john.doe@example.com</span>
+                    </div>
+                
+                    <div class="info-item">
+                        <label>Contact:</label>
+                        <span id="user-contact">+91 9123456789</span>
+                    </div>
+                
+                    <div class="info-item">
+                        <label>Address:</label>
+                        <span id="user-address">123 Main Street, City</span>
+                    </div>
+                
+                    <div class="info-item">
+                        <label>Password:</label>
+                        <span id="user-password">********</span>
+                    </div>
+                
+                    <div class="info-item">
+                        <label>Vehicle Model:</label>
+                        <span id="user-vehicle">Toyota Corolla</span>
+                    </div>
+                
+                    <button class="btn btn-primary edit-profile" id="edit-profile-btn">Edit Profile</button>
+                </div>
+                
+                <div class="order-history">
+                    <h2>Order History</h2>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Order ID</th>
+                                <th>Date</th>
+                                <th>Items</th>
+                                <th>Total</th>
+                                <th>Status</th>
+                                
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>#12345</td>
+                                <td>2024-07-20</td>
+                                <td>Car Battery, Engine Oil</td>
+                                <td>₹2435</td>
+                                <td>Delivered</td>
+                                
+                            </tr>
+                            <tr>
+                                <td>#12346</td>
+                                <td>2024-07-25</td>
+                                <td>Car Tire</td>
+                                <td>₹1580</td>
+                                <td>Shipped</td>
+                                
+                            </tr>
+                            </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div id="edit-profile-modal" class="modal">
+                <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <h2>Edit Profile</h2>
+                    <form id="edit-profile-form">
+                        <div class="form-group">
+                            <label for="edit-name">Name:</label>
+                            <input type="text" id="edit-name" name="edit-name">
+                        </div>
+                        <div class="form-group">
+                            <label for="edit-email">Email:</label>
+                            <input type="email" id="edit-email" name="edit-email">
+                        </div>
+                        <div class="form-group">
+                            <label for="edit-contact">Contact:</label>
+                            <input type="text" id="edit-contact" name="edit-contact">
+                        </div>
+                        <div class="form-group">
+                            <label for="edit-address">Address:</label>
+                            <textarea id="edit-address" name="edit-address" rows="4"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="edit-password">Password:</label>
+                            <input type="password" id="edit-password" name="edit-password">
+                        </div>
+                        <div class="form-group">
+                            <label for="edit-vehicle">Vehicle Model:</label>
+                            <input type="text" id="edit-vehicle" name="edit-vehicle">
+                        </div>
+                        <button type="submit" class="btn btn-primary">Save Changes</button>
+                    </form>
+                </div>
+            </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h3>ORVB Assist</h3>
+                    <p>Your trusted partner for roadside assistance and auto services.</p>
+                </div>
+                <div class="footer-links">
+
+                    <div class="footer-contact">
+                        <h4>Contact Us</h4>
+                        <p><i class="fas fa-phone"></i> +91 7015003372</p>
+                        <p><i class="fas fa-envelope"></i> deepanshbanga312@gmail.com.com</p>
+                        <p><i class="fas fa-map-marker-alt"></i> Mohali,Punjab</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </footer>
+
+    <script src="profile.js"></script>
+</body>
+
+</html>

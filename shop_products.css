@@ -1,0 +1,165 @@
+/* Header (shared across all pages) */
+.header {
+    background-color: #e6f7ff;
+    /*padding:  0;*/
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+}
+
+.header .logo a {
+    font-size: 1.5em;
+    color: #000;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.header .logo span {
+    color: #007bff;
+}
+
+.header .main-nav ul,
+.header .navbar .nav-links {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.header .main-nav ul li,
+.header .navbar .nav-links li {
+    margin-right: 20px;
+}
+
+.header .main-nav ul li:last-child,
+.header .navbar .nav-links li:last-child {
+    margin-right: 0;
+}
+
+.header .main-nav ul li a,
+.header .navbar .nav-links li a {
+    text-decoration: none;
+    color: #333;
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: color 0.3s ease;
+}
+
+.header .main-nav ul li a:hover,
+.header .navbar .nav-links li a:hover,
+.header .main-nav ul li a.active,
+.header .navbar .nav-links li a.active {
+    color: #007bff;
+}
+
+.header .auth-buttons {
+    margin-left: auto;
+    /* Position auth buttons to the right */
+}
+
+.header .auth-buttons a.btn {
+    /* Target any element with class 'btn' inside .auth-buttons inside .header */
+    padding: 8px 8px;
+    /* Adjust as needed */
+    font-size: 0.9em;
+    /* Adjust as needed */
+}
+
+.header .auth-buttons a {
+    margin-left: 10px;
+}
+
+/* Footer */
+.footer {
+    background-color: #333;
+    color: #fff;
+    padding: 30px 0;
+}
+
+.footer .container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 30px;
+}
+
+.footer-logo h3 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.footer-logo p {
+    color: #ccc;
+}
+
+.footer-links h4,
+.footer-services h4,
+.footer-contact h4 {
+    border-bottom: 2px solid #555;
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+}
+
+.footer-links ul,
+.footer-services ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-links ul li,
+.footer-services ul li {
+    margin-bottom: 10px;
+}
+
+.footer-links ul li a,
+.footer-services ul li a {
+    color: #ccc;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-links ul li a:hover,
+.footer-services ul li a:hover {
+    color: #fff;
+}
+
+.footer-contact p {
+    color: #ccc;
+    margin-bottom: 10px;
+}
+
+.footer-contact i {
+    margin-right: 10px;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 20px;
+    margin-top: 20px;
+    border-top: 1px solid #555;
+}
+
+.footer-bottom p {
+    color: #ccc;
+}
+
+.social-links {
+    margin-top: 10px;
+}
+
+.social-links a {
+    color: #fff;
+    margin: 0 10px;
+    font-size: 1.2em;
+}
+
+.social-links a:hover {
+    color: #007bff;
+}

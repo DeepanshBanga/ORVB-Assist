@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RoadReady Assist Hub - Shop</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="shop.css">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+</head>
+
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">
+                    <h3>ORVB<span>Assist</span></h3>
+                </a>
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="shop.html">Shop</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="profile.html" class="active">Profile</a></li>
+                                                                                                         
+                </ul>
+            </nav>
+            <div class="auth-buttons">
+                <a href="login.html" class="btn btn-outline">Login</a>
+                <a href="register.html" class="btn btn-primary">Register</a>
+            </div>
+        </div>
+    </header>
+    <section class="page-header">
+        <div class="container">
+            <h1>Shop Products</h1>
+            <p>Quality automotive products to keep you safe and prepared on the road.</p>
+        </div>
+    </section>
+
+    <section class="shop-section">
+        <div class="container">
+            
+           
+            <section class="product-container">
+                <h2>Shop Car Repair Tools & Accessories</h2>
+                <div class="product-grid">
+                    <div class="product-card">
+                        <img src="battery.jpeg" alt="Car Battery">
+                        <h3>Car Battery</h3>
+                        <p>High-performance battery for all vehicle types.</p>
+                        <span>₹2130</span>
+                        <button class="btn add-to-cart" data-name="Car Battery" data-price="120">Add to Cart</button>
+                        <div class="product-card-cart">  <h4>Cart</h4>
+                            <ul class="cart-list"></ul>
+                            <p>Total: ₹<span class="cart-total">0</span></p>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <img src="tire.jpeg" alt="Car Tire">
+                        <h3>Car Tire</h3>
+                        <p>Durable tires for all terrains.</p>
+                        <span>₹1580</span>
+                        <button class="btn add-to-cart" data-name="Car Tire" data-price="80">Add to Cart</button>
+                        <div class="product-card-cart">  <h4>Cart</h4>
+                            <ul class="cart-list"></ul>
+                            <p>Total: ₹<span class="cart-total">0</span></p>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <img src="oil.jpeg" alt="Engine Oil">
+                        <h3>Engine Oil</h3>
+                        <p>Premium synthetic engine oil for smooth performance.</p>
+                        <span>₹305</span>
+                        <button class="btn add-to-cart" data-name="Engine Oil" data-price="35">Add to Cart</button>
+                        <div class="product-card-cart">  <h4>Cart</h4>
+                            <ul class="cart-list"></ul>
+                            <p>Total: ₹<span class="cart-total">0</span></p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        
+            <section class="cart-container">
+                <h2>Shopping Cart</h2>
+                <ul id="cart-list"></ul>
+                <p>Total: ₹<span id="cart-total">0</span></p>
+                <button class="btn btn-primary" id="checkout-all">Checkout All</button>
+            </section>        
+           
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h3>ORVB Assist</h3>
+                    <p>Your trusted partner for roadside assistance and auto services.</p>
+                </div>
+                <div class="footer-links">
+
+                <div class="footer-contact">
+                    <h4>Contact Us</h4>
+                    <p><i class="fas fa-phone"></i> +91 7015003372</p>
+                    <p><i class="fas fa-envelope"></i> deepanshbanga312@gmail.com.com</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Mohali,Punjab</p>
+                </div>
+            </div>
+
+        </div>
+    </footer>
+
+    <script src="shop_products.js"></script>
+</body>
+
+</html>

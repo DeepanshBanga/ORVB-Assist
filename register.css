@@ -1,0 +1,60 @@
+
+        .register-container {
+          background-color: white;
+          padding: 40px;
+          border-radius: 10px;
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+          width: 350px;
+          /* align-content: center; Remove this as it's for grid/flex items */
+          margin: 20px auto; /* Add auto margins on left and right to center */
+      }
+
+      .register-container h2 {
+          text-align: center;
+          margin-bottom: 20px;
+          color: #1e293b;
+      }
+
+      .register-container label {
+          display: block;
+          margin-top: 15px;
+          margin-bottom: 5px;
+          font-weight: bold;
+      }
+
+      .register-container input,
+      .register-container textarea { /* Apply the same styles to both input and textarea */
+          width: 100%;
+          padding: 10px;
+          border: 1px solid #ccc;
+          border-radius: 5px;
+      }
+    .register-container input,
+    .register-container textarea,
+    .register-container select {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+
+      .register-container button {
+          margin-top: 20px;
+          width: 100%;
+          padding: 10px;
+          background-color: #2563eb;
+          color: white;
+          border: none;
+          border-radius: 5px;
+          cursor: pointer;
+      }
+
+      .register-container button:hover {
+          background-color: #1e40af;
+      }
+
+      .register-container p {
+          text-align: center;
+          margin-top: 15px;
+          font-size: 0.9rem;
+      }

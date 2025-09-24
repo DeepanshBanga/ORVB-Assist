@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>User Dashboard</title>
+    <link rel="stylesheet" href="dashboard.css">
+    <link rel="stylesheet" href="style.css">
+    
+    <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-firestore-compat.js"></script>
+    <script src="firebase-config.js"></script> <!-- Your Firebase config -->
+</head>
+<script>
+    // Enable realtime for a table (call this once, e.g., on first login)
+async function enableRealtimeForTable(tableName) {
+    try {
+        const { error } = await supabase.rpc('supabase_functions.add_publication', {
+            publication_name: 'supabase_realtime',
+            table_names: [tableName],
+            insert: true,
+            update: true,
+            delete: true,
+            truncate: true
+        });
+
+        if (error) throw error;
+        console.log(`Realtime enabled for ${tableName}`);
+        return { success: true };
+    } catch (error) {
+        console.error('RPC error:', error);
+        return { success: false, error: error.message };
+    }
+}
+</script>
+<script>
+    // Subscribe to service requests changes for current user
+function subscribeToServiceRequests(userId, callback) {
+    return supabase
+        .channel('service_requests')
+        .on('postgres_changes', 
+            { event: '*', schema: 'public', table: 'service_requests', filter: `user_id=eq.${userId}` },
+            (payload) => {
+                console.log('Realtime update:', payload);
+                callback(payload);  // e.g., refresh UI
+            }
+        )
+        .subscribe();
+}
+
+// Unsubscribe
+function unsubscribeRealtime(channelName) {
+    supabase.removeChannel(supabase.getChannels().find(ch => ch.subscription.id === channelName));
+}
+</script>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">
+                    <h3>ORVB<span>Assist</span></h3>
+                </a>
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="shop.html">Shop</a></li>
+                    <li><a href="contact.html" class="active">Contact</a></li>
+                    <li><a href="profile.html">Profile</a></li>
+                </ul>
+            </nav>
+            <div class="auth-buttons">
+                <a href="login.html" class="btn btn-outline">Login</a>
+                <a href="register.html" class="btn btn-primary">Register</a>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <h1>Welcome to Dashboard</h1>
+
+        <div class="user-info">
+            <h2>User Information</h2>
+            <div class="info-item"><label>Name:</label><span id="user-name">Loading...</span></div>
+            <div class="info-item"><label>Email:</label><span id="user-email">Loading...</span></div>
+            <div class="info-item"><label>Contact:</label><span id="user-contact">Loading...</span></div>
+            <div class="info-item"><label>Address:</label><span id="user-address">Loading...</span></div>
+            <div class="info-item"><label>Vehicle Model:</label><span id="user-vehicle-model">Loading...</span></div>
+            <button class="btn btn-primary" id="edit-profile-btn">Edit Profile</button>
+        </div>
+
+        <!-- Modal -->
+        <div id="edit-profile-modal" class="modal">
+            <div class="modal-content">
+                <span class="close" id="close-modal">&times;</span>
+                <h2>Edit Profile</h2>
+                <form id="edit-profile-form">
+                    <div class="form-group">
+                        <label for="edit-name">Name:</label>
+                        <input type="text" id="edit-name" name="edit-name">
+                    </div>
+                    <div class="form-group">
+                        <label for="edit-email">Email:</label>
+                        <input type="email" id="edit-email" name="edit-email">
+                    </div>
+                    <div class="form-group">
+                        <label for="edit-contact">Contact:</label>
+                        <input type="text" id="edit-contact" name="edit-contact">
+                    </div>
+                    <div class="form-group">
+                        <label for="edit-address">Address:</label>
+                        <textarea id="edit-address" name="edit-address"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="edit-vehicle-model">Vehicle Model:</label>
+                        <input type="text" id="edit-vehicle-model" name="edit-vehicle-model">
+                    </div>
+                    <div class="form-group">
+                        <label for="edit-password">New Password:</label>
+                        <input type="password" id="edit-password" name="edit-password">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Save Changes</button>
+                </form>
+            </div>
+        </div>
+    </div>
+<section class="dashboard-section">
+    <h2>Your Service Requests</h2>
+    <div id="requestsList"></div>
+    <button onclick="createServiceRequestForm()" class="btn btn-primary">New Request</button>
+</section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h3>ORVB Assist</h3>
+                    <p>Your trusted partner for roadside assistance and auto services.</p>
+                </div>
+                <div class="footer-links">
+
+                    <div class="footer-contact">
+                        <h4>Contact Us</h4>
+                        <p><i class="fas fa-phone"></i> +91 7015003372</p>
+                        <p><i class="fas fa-envelope"></i> deepanshbanga312@gmail.com.com</p>
+                        <p><i class="fas fa-map-marker-alt"></i> Mohali,Punjab</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </footer>
+
+    <script src="dashboard.js"></script>
+</body>
+</html>
