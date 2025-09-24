@@ -151,7 +151,10 @@ function unsubscribeRealtime(channelName) {
             </div>
         </div>
     </footer>
-
-    <script src="dashboard.js"></script>
+<script type="module">
+  import './supabase-config.js';  // Loads Supabase client
+  import './auth.js';             // signUp function
+  import './register.js';         // Form handler
+</script>
 </body>
 </html>

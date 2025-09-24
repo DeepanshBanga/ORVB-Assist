@@ -11,10 +11,9 @@
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 </head>
 <script type="module">
-  import './supabase-config.js';  // Or path to it, e.g., './MultipleFiles/supabase-config.js'
-  import './auth.js';
-  import './login.js';  // Or relevant file
-</script>
+       import './supabase-config.js';  // Initializes Supabase
+       import './auth.js';             // signUp function
+       import './register.js';         // Form event listener</script>
 <body>
     <header class="header">
         <div class="container">
@@ -88,7 +87,11 @@
         </div>
     </footer>
 
-    <script src="register.js"></script>
+<script type="module">
+  import './supabase-config.js';  // Loads Supabase client
+  import './auth.js';             // signUp function
+  import './register.js';         // Form handler
+</script>
 </body>
 
 </html>
